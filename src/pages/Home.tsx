@@ -3,7 +3,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Palette, Wand2 } from 'lucide-react'
+import { Palette, Wand2, ArrowRight  } from 'lucide-react'
   
 
 const Home: React.FC = () => {
@@ -26,15 +26,15 @@ const Home: React.FC = () => {
       <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 w-full max-w-md mb-12">
         <Link 
           to="/generate" 
-          className="bg-brand-500 text-white px-6 py-3 rounded-lg hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 transition flex items-center justify-center"
+          className="bg-brand-500 text-white px-6 font-synonym py-3 rounded-lg hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 transition flex items-center justify-center"
         >
            Generate Wallpaper
         </Link>
         <Link 
           to="/generate" 
-          className="border border-brand-500 text-brand-600 dark:text-brand-400 px-6 py-3 rounded-lg hover:bg-brand-50 dark:hover:bg-gray-800 transition flex items-center justify-center"
+          className="border border-brand-500 text-brand-600 dark:text-brand-400 px-6 py-3 rounded-lg hover:bg-brand-50 dark:hover:bg-gray-800 transition flex items-center justify-center font-synonym font-bold"
         >
-           Explore Colors
+           Know More <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
         </Link>
       </div>
 

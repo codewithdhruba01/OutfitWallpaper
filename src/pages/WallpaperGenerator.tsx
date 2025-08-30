@@ -67,7 +67,7 @@ const WallpaperGenerator: React.FC = () => {
   return (
     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       {error && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded relative" role="alert">
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded" role="alert">
           <div className="flex items-center">
             <AlertTriangle className="mr-2" />
             {error}

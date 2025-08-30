@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "clsx": "^2.1.0",
     "color-convert": "^2.0.1",
     "framer-motion": "^11.0.8",
@@ -20,6 +21,7 @@
     "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/react": "^18.2.55",
     "@types/react-color": "^3.0.10",
     "@types/react-dom": "^18.2.19",

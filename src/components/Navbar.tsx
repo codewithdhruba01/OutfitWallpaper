@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Palette, Home, Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 
@@ -12,72 +12,108 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-sm fixed w-full z-50 transition-colors duration-300">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center relative">
-        <Link to="/" className="text-2xl font-bold text-brand-600 dark:text-brand-400 flex items-center">
-          <Palette className="mr-2" /> Outfit Wallpaper
-        </Link>
-        
+    <nav className="fixed w-full z-50 top-3 flex justify-center">
+      <div
+        className="flex items-center justify-between 
+        rounded-full px-6 py-2 max-w-3xl w-[90%]
+        bg-white/30 dark:bg-gray-900/30 
+        backdrop-blur-md border border-white/20 dark:border-gray-700/30
+        shadow-lg transition-all duration-300"
+      >
+        {/* Logo */}
+        <NavLink
+          to="/"
+          className="text-lg font-semibold text-brand-600 dark:text-brand-400 flex items-center"
+        >
+          <Palette className="mr-1" size={18} /> Outfit
+        </NavLink>
+
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center space-x-2">
-          <button 
-            onClick={toggleTheme} 
-            className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition"
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full bg-white/20 dark:bg-gray-800/40 hover:scale-110 transition"
           >
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
-          <button 
-            onClick={toggleMenu} 
-            className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition"
+          <button
+            onClick={toggleMenu}
+            className="p-2 rounded-full bg-white/20 dark:bg-gray-800/40 hover:scale-110 transition"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-4 items-center">
-          <Link 
-            to="/" 
-            className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition flex items-center"
+        <div className="hidden md:flex space-x-5 items-center font-outfit">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `flex items-center transition px-3 py-1 rounded-full ${
+                isActive
+                  ? 'bg-brand-500 text-white shadow-md'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400'
+              }`
+            }
           >
-            <Home className="mr-1" /> Home
-          </Link>
-          <Link 
-            to="/generate" 
-            className="bg-brand-500 text-white px-4 py-2 rounded-md hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 transition flex items-center"
+             Home
+          </NavLink>
+          <NavLink
+            to="/generate"
+            className={({ isActive }) =>
+              `flex items-center transition px-4 py-1.5 rounded-full ${
+                isActive
+                ? 'bg-brand-500 text-white shadow-md'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400'
+              }`
+            }
           >
-            <Palette className="mr-1" /> Generate Wallpaper
-          </Link>
-          <button 
-            onClick={toggleTheme} 
-            className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition"
+             Generate
+          </NavLink>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full bg-white/20 dark:bg-gray-800/40 hover:scale-110 transition"
           >
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg md:hidden">
-            <div className="flex flex-col items-center py-4 space-y-4">
-              <Link 
-                to="/" 
-                className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 transition flex items-center"
-                onClick={toggleMenu}
-              >
-                <Home className="mr-1" /> Home
-              </Link>
-              <Link 
-                to="/generate" 
-                className="bg-brand-500 text-white px-4 py-2 rounded-md hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 transition flex items-center"
-                onClick={toggleMenu}
-              >
-                <Palette className="mr-1" /> Generate Wallpaper
-              </Link>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-16 w-[90%] max-w-3xl rounded-2xl 
+          bg-white/30 dark:bg-gray-900/30 backdrop-blur-md 
+          border border-white/20 dark:border-gray-700/30 shadow-lg md:hidden">
+          <div className="flex flex-col items-center py-4 space-y-4">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `flex items-center transition px-3 py-1 rounded-full ${
+                  isActive
+                    ? 'bg-brand-500 text-white shadow-md'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400'
+                }`
+              }
+              onClick={toggleMenu}
+            >
+              <Home className="mr-1" size={16} /> Home
+            </NavLink>
+            <NavLink
+              to="/generate"
+              className={({ isActive }) =>
+                `flex items-center transition px-4 py-1.5 rounded-full ${
+                  isActive
+                    ? 'bg-brand-500 text-white shadow-md'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400'
+                }`
+              }
+              onClick={toggleMenu}
+            >
+              <Palette className="mr-1" size={16} /> Generate
+            </NavLink>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

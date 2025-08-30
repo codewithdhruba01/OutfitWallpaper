@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         
         {/* Brand + Description */}
         <div>
-          <div className="flex items-center space-x-2 mb-3">
+          <div className="flex items-center space-x-2 mb-2">
                  <img 
                   src="./logo/wallpaper-logo.png" 
                   alt="Logo" 
@@ -16,18 +16,18 @@ const Footer: React.FC = () => {
                   />
             <span className="text-lg font-bold text-brand-600 dark:text-brand-400 flex items-center font-synonym">Wallpaper Zone</span>
           </div>
-          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 font-poppins">
             Create your perfect wallpaper that matches your outfit and style. 
             Simple, elegant and AI powered wallpaper generator for your phone. 
           </p>
-          <div className="flex space-x-4">
+          <div className="flex space-x-2">
             
             <a href="https://x.com/codewithdhruba" target="_blank" rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-400 transition">
+              className="text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-500 transition">
               <Twitter size={20} />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition">
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition">
               <Facebook size={20} />
             </a>
             <a href="https://github.com/codewithdhruba01" target="_blank" rel="noopener noreferrer"
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <Github size={20} />
             </a>
             <a href="https://www.linkedin.com/in/dhrubaraj-pati/" target="_blank" rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-700 transition">
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition">
               <Linkedin size={20} />
             </a>
           </div>
@@ -43,21 +43,21 @@ const Footer: React.FC = () => {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-gray-800 dark:text-gray-100 font-semibold mb-3">Quick Links</h4>
+          <h4 className="text-gray-800 dark:text-gray-100 font-bold mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <li><a href="/about" className="hover:text-brand-500 transition">About</a></li>
             <li><a href="/generate" className="hover:text-brand-500 transition">Generate</a></li>
             <li><a href="#" className="hover:text-brand-500 transition">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-brand-500 transition">Terms & Conditions</a></li>
+            <li><a href="/terms" className="hover:text-brand-500 transition">Terms & Conditions</a></li>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h4 className="text-gray-800 dark:text-gray-100 font-semibold mb-3">Contact</h4>
+          <h4 className="text-gray-800 dark:text-gray-100 font-bold mb-3">Contact</h4>
           <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <li className="flex items-center space-x-2">
-              <Mail size={16} /> <span>info@outfitwallpaper.com</span>
+              <Mail size={16} /> <span>info@wallpaperzone.com</span>
             </li>
             <li className="flex items-center space-x-2">
               <Phone size={16} /> <span>+91 9876543210</span>

@@ -4,6 +4,7 @@ import { ThemeProvider } from './context/ThemeContext'
 import WallpaperGenerator from './pages/WallpaperGenerator'
 import Home from './pages/Home'
 import About from './pages/About'
+import TermsAndConditions from './pages/TermsAndConditions'
 import Layout from './components/Layout'
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/generate" element={<WallpaperGenerator />} />
             <Route path="/about" element={<About />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
           </Routes>
         </Layout>
       </Router>

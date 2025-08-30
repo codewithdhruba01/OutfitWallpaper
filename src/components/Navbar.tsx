@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-5 items-center font-outfit">
           <NavLink
-            to="/"
+            to="/about"
             className={({ isActive }) =>
               `flex items-center transition px-3 py-1 rounded-full ${
                 isActive
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
               }`
             }
           >
-             Home
+             About
           </NavLink>
           <NavLink
             to="/generate"
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
           border border-white/20 dark:border-gray-700/30 shadow-lg md:hidden">
           <div className="flex flex-col items-center py-4 space-y-4">
             <NavLink
-              to="/"
+              to="/about"
               className={({ isActive }) =>
                 `flex items-center transition px-3 py-1 rounded-full ${
                   isActive
@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
               }
               onClick={toggleMenu}
             >
-              <Home className="mr-1" size={16} /> Home
+             About
             </NavLink>
             <NavLink
               to="/generate"
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
               }
               onClick={toggleMenu}
             >
-              <Palette className="mr-1" size={16} /> Generate
+              Generate
             </NavLink>
           </div>
         </div>

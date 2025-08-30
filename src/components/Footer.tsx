@@ -9,8 +9,12 @@ const Footer: React.FC = () => {
         {/* Brand + Description */}
         <div>
           <div className="flex items-center space-x-2 mb-3">
-            <Palette className="text-brand-500" size={24} />
-            <span className="text-xl font-bold text-gray-800 dark:text-gray-100">Outfit Wallpaper</span>
+                 <img 
+                  src="./logo/wallpaper-logo.png" 
+                  alt="Logo" 
+                  className="h-9 w-8 mr-2 rounded-full" 
+                  />
+            <span className="text-lg font-bold text-brand-600 dark:text-brand-400 flex items-center font-synonym">Wallpaper Zone</span>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
             Create your perfect wallpaper that matches your outfit and style. 
@@ -41,7 +45,7 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-gray-800 dark:text-gray-100 font-semibold mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-            <li><a href="/" className="hover:text-brand-500 transition">Home</a></li>
+            <li><a href="/about" className="hover:text-brand-500 transition">About</a></li>
             <li><a href="/generate" className="hover:text-brand-500 transition">Generate</a></li>
             <li><a href="#" className="hover:text-brand-500 transition">Privacy Policy</a></li>
             <li><a href="#" className="hover:text-brand-500 transition">Terms & Conditions</a></li>

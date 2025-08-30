@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Palette, Home, Menu, X, Sun, Moon } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 
 const Navbar: React.FC = () => {
@@ -23,9 +23,14 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <NavLink
           to="/"
-          className="text-lg font-semibold text-brand-600 dark:text-brand-400 flex items-center"
+          className="text-lg font-bold text-brand-600 dark:text-brand-400 flex items-center font-synonym"
         >
-          <Palette className="mr-1" size={18} /> Outfit
+          <img 
+            src="./logo/wallpaper-logo.png" 
+            alt="Logo" 
+            className="h-8 w-7 mr-2 rounded-full" 
+          />
+          Wallpaper Zone
         </NavLink>
 
         {/* Mobile Menu Toggle */}
@@ -56,19 +61,19 @@ const Navbar: React.FC = () => {
               }`
             }
           >
-             About
+            About
           </NavLink>
           <NavLink
             to="/generate"
             className={({ isActive }) =>
               `flex items-center transition px-4 py-1.5 rounded-full ${
                 isActive
-                ? 'bg-brand-500 text-white shadow-md'
+                  ? 'bg-brand-500 text-white shadow-md'
                   : 'text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400'
               }`
             }
           >
-             Generate
+            Generate
           </NavLink>
           <button
             onClick={toggleTheme}
@@ -96,7 +101,7 @@ const Navbar: React.FC = () => {
               }
               onClick={toggleMenu}
             >
-             About
+              About
             </NavLink>
             <NavLink
               to="/generate"

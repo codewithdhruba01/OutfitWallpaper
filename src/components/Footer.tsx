@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
      <div className="border-t border-gray-200 dark:border-gray-800 py-4 text-center text-sm text-gray-600 dark:text-gray-400">
       © {new Date().getFullYear()} Outfit Wallpaper Generator. <br />Maintained by{" "}
   <a
-    href="https://codewithdhruba.in"
+    href="https://codewithdhruba.netlify.app/"
     target="_blank"
     rel="noopener noreferrer"
     className="font-medium text-brand-500 hover:underline"

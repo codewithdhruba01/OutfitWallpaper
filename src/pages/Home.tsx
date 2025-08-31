@@ -31,7 +31,7 @@ const Home: React.FC = () => {
            Generate Wallpaper
         </Link>
         <Link 
-          to="/generate" 
+          to="/about"
           className="border border-brand-500 text-brand-600 dark:text-brand-400 px-6 py-3 rounded-lg hover:bg-brand-50 dark:hover:bg-gray-800 transition flex items-center justify-center font-synonym font-bold"
         >
            Know More <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />

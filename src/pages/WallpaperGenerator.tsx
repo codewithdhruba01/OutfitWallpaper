@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import { ChromePicker } from 'react-color'
 import tinycolor from 'tinycolor2'
 import { Download, AlertTriangle, ChevronDown } from 'lucide-react'
+import { Iphone } from '../components/ui/iphone'
 
 const WallpaperGenerator: React.FC = () => {
   const [color, setColor] = useState('#3B82F6')
@@ -122,13 +123,17 @@ const WallpaperGenerator: React.FC = () => {
         <p className="text-gray-700 dark:text-gray-500 mb-6 text-center text-sm sm:text-base font-satoshi">
           See how your chosen color or gradient <br className="hidden sm:block" /> will look on the wallpaper.
         </p>
-        <div
-          className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-full aspect-[9/16] rounded-lg shadow-lg"
-          style={{
-            background: generateWallpaper(),
-            transition: 'background 0.3s ease'
-          }}
-        />
+        <div className="w-full max-w-[280px] sm:max-w-[320px]">
+          <Iphone>
+            <div
+              className="w-full h-full"
+              style={{
+                background: generateWallpaper(),
+                transition: 'background 0.3s ease'
+              }}
+            />
+          </Iphone>
+        </div>
         <canvas ref={canvasRef} className="hidden" />
       </div>
 
@@ -155,9 +160,8 @@ const WallpaperGenerator: React.FC = () => {
               >
                 {faq.q}
                 <ChevronDown
-                  className={`transform transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5 ${
-                    openFAQ === i ? 'rotate-180' : ''
-                  }`}
+                  className={`transform transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5 ${openFAQ === i ? 'rotate-180' : ''
+                    }`}
                 />
               </button>
               {openFAQ === i && (
